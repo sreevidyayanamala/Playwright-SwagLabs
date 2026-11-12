@@ -2,6 +2,7 @@ import { test } from '@playwright/test';
 import { LoginPage } from '../../src/pages/LoginPage';
 import { InventoryPage } from '../../src/pages/InventoryPage';
 import { CheckoutPage } from '../../src/pages/CheckoutPage';
+import users from '../../src/testData/users.json';
 
 test('@regression Checkout Flow', async ({ page }) => {
 
@@ -12,8 +13,8 @@ test('@regression Checkout Flow', async ({ page }) => {
   await loginPage.navigateToLoginPage();
 
   await loginPage.login(
-    'standard_user',
-    'secret_sauce'
+    users.standardUser.username,
+    users.standardUser.password
   );
 
   await inventoryPage.addBackpackToCart();

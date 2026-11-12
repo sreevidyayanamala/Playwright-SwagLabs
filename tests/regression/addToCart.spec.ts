@@ -1,4 +1,5 @@
 import { test } from '@playwright/test';
+import users from '../../src/testData/users.json';
 
 import { LoginPage }
 from '../../src/pages/LoginPage';
@@ -23,8 +24,8 @@ async ({ page }) => {
   await loginPage.navigateToLoginPage();
 
   await loginPage.login(
-    'standard_user',
-    'secret_sauce'
+    users.standardUser.username,
+    users.standardUser.password
   );
 
   await inventoryPage.addBackpackToCart();

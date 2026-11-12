@@ -1,0 +1,6 @@
+test('...', async ({
+  loginPage,
+  inventoryPage
+}) => {
+
+});

@@ -1,20 +1,18 @@
-import { BasePage } from './BasePage';
 import { Page } from '@playwright/test';
+import { BasePage } from './BasePage';
 
-export class LoginPage extends BasePage{
+export class LoginPage extends BasePage {
 
   constructor(page: Page) {
-  super(page);
-}
-
-  
+    super(page);
+  }
 
   private usernameInput = '#user-name';
   private passwordInput = '#password';
   private loginButton = '#login-button';
 
   async navigateToLoginPage() {
-    await this.page.goto('/');
+    await this.navigate('/');
   }
 
   async login(username: string, password: string) {
